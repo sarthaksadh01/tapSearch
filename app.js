@@ -34,6 +34,8 @@ app.post("/submit",(req,res)=>{
 // search post request
 app.post("/search",(req,res)=>{
     var word = req.body.word;
+    word  = word.trim().toLowerCase()
+    console.log(word);
     
     db.search(word).then((documentIds)=>{
         db.getParagraphs(documentIds).then((result)=>{
