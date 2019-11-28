@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result Page</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div><h1 class="text-center text-success">Result:  <span class="text-primary"><%= result.word %> </span> </h1></div>
+        <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Paragraph</th>
+                    <th scope="col">Paragraph id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% var i  =0; %>
+                    <% for(var j=0;j<result.pargraphs.length;j++){i++; %>
+        
+                  <tr>
+                    <th scope="row"><%= i %></th>
+                    <td><%= result.pargraphs[j].paragraph %></td>
+                    <td><%= result.documentIds[j] %></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+</body>
+</body>
+
+</html>
